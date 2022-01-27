@@ -1,8 +1,4 @@
-<h3>Students</h3>
-<ol>
- <% @students.each do |t| %>
-    <li>
-    <%= t.name%>
-  </li>
-<%end%>
-</ol>
+<h3>Student Details</h3>
+   <p> <strong> Name </strong> <%= @student.name %> </p>
+    <p><strong>Roll </strong> <%=@student.roll%> </p>
+

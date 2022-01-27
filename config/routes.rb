@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'students#show'
-  get 'students/:id', to:'students#about'
-  resources:students ,only: [:index]
+   get 'students/new', to:'students#new'
+  #  post 'students/about', to:'students#about'
+  resources:students ,only: [:index,:show,:create,:new]
 end
