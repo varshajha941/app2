@@ -7,7 +7,7 @@
  <% end %>
  </ol>
 <% end %>
- <%= form_with scope: :student, url: students_path, local: true do |f| %> 
+ <%= form_with scope:@student, url: students_path, local: true do |f| %> 
    <p>
     <%= f.label :name %></br>
     <%= f.text_field :name %>
