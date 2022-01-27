@@ -2,3 +2,6 @@
    <p> <strong> Name </strong> <%= @student.name %> </p>
     <p><strong>Roll </strong> <%=@student.roll%> </p>
 
+    <%= link_to 'Delete' , student_path(@student),method: :delete, data:{ confirm:"Are you sure?"} %> |
+    <%= link_to 'Edit' , edit_student_path(@student)%> |
+    <%= link_to 'Listing' , students_path(@student)%> 

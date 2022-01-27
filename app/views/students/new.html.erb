@@ -1,22 +1,2 @@
 <h3>New Student</h3>
-<% if @student.errors.any? %>
-<ol>
- <h2>Unable to create student because of following errors</h2>
- <% @student.errors.full_messages.each do|msg| %>
-   <li> <%=msg%> </li>
- <% end %>
- </ol>
-<% end %>
- <%= form_with scope:@student, url: students_path, local: true do |f| %> 
-   <p>
-    <%= f.label :name %></br>
-    <%= f.text_field :name %>
-   </p> 
-   <p>
-    <%= f.label :roll %></br>
-    <%= f.number_field :roll %>
-   </p>
-   <p>
-   <%= f.submit %> 
-   </p>
-<%end%>
+<%= render 'form' %>

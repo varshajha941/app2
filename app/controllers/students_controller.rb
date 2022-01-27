@@ -1,6 +1,6 @@
 class StudentsController < ApplicationController
+     before_action :set_student , only:[:show,:edit,:update ,:destroy]
 def show 
-@student=Student.find(params[:id])
 end
 def index
 @studs=Student.all
@@ -9,7 +9,6 @@ def new
      @student=Student.new
 end
 def edit
-    @student=Student.find(params[:id])
 end
 # def about
 #     @student=Student.new(params.require(:student).permit(:name,:roll))
@@ -17,7 +16,7 @@ end
 #     redirect_to @student
 # end
 def create
-   @student=Student.new(params.require(:student).permit(:name,:roll))
+   @student=Student.new(student_params)
    if @student.save
       flash[:notice]="Successfully created"
       redirect_to @student
@@ -26,8 +25,7 @@ def create
     end
 end
 def update
-     @student=Student.find(params[:id])
-    if @student.update(params.require(:student).permit(:name,:roll))
+    if @student.update(student_params)
        flash[:notice]="Successfully Updated"
        redirect_to @student
      else
@@ -35,8 +33,15 @@ def update
      end
 end
 def destroy
-@student=Student.find(params[:id])
 @student.destroy
 redirect_to students_path
+end
+private
+
+def set_student
+     @student=Student.find(params[:id])
+end
+def student_params
+     params.require(:student).permit(:name,:roll)
 end
 end
