@@ -3,11 +3,13 @@
  <tr>
  <th>Name</th>
  <th>Roll</th>
+ <th>Action</th>
  </tr>
-<% @studs.each do |t| %>
+<% @studs.each do |student| %>
  <tr>
-  <td><%= t.name %>  </td>
-  <td><%= t.roll %> </td>
+  <td><%= student.name %>  </td>
+  <td><%= student.roll %> </td>
+  <td><%= link_to 'Delete' , student_path(student),method: :delete %> </td>
   </tr>
 <% end %>
 </table>

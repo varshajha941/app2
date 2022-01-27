@@ -22,3 +22,5 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+REST :Representational state transfer is basically mapping of http verbs(get,post,patch/put,delete ) to crud actions.
+resources provide RESTful routes to rails resources
