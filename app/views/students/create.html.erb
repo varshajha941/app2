@@ -1,9 +1,0 @@
-<% if @student.errors.any? %>
-<ol>
- <h2>Unable to create student because of following errors</h2>
- <% @student.errors.full_messages.each do|msg| %>
-   <li> <%=msg%> </li>
- <% end %>
- </ol>
- <a href=" students/new"> create new student </a>
-<% end %>
