@@ -3,5 +3,5 @@ Rails.application.routes.draw do
   #  post 'students/about', to:'students#about'
   resources:students 
   get 'signup', to:'departments#new'
-  post 'departments', to:'departments#create'
+  resources:departments ,except: [:new]
 end
