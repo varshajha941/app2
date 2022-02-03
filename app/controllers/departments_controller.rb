@@ -9,6 +9,9 @@ class DepartmentsController <ApplicationController
     def edit
       @department=Department.find(params[:id])
     end
+    def index
+      @departments=Department.all
+    end
     def update
       @department=Department.find(params[:id])
        if @department.update(params.require(:department).permit(:dept,:mail,:password))
